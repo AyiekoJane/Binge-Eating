@@ -4,7 +4,7 @@ import pickle
 app = Flask(__name__)
 
 #Load the pickle model
-model = pickle.load(open(r'C:\Users\User\Downloads\Binge_Trial_2\binge.pkl', 'rb'))
+model = pickle.load(open(r'C:\Users\User\Downloads\Binge_WebApp\binge.pkl', 'rb'))
 
 # Renderhome page
 @app.route('/')
