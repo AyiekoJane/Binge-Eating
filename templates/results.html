@@ -48,7 +48,7 @@
       <!-- End of Async Drift Code -->
 
   </head>
-  <body>
+  <body onload="run()">
  <!-- Navbar Section -->
  <nav class="navbar">
   <div class="navbar__container">
@@ -61,13 +61,13 @@
     
     <ul class="navbar__menu">
       <li class="navbar__item">
-         <a href="\" class="navbar__links" id="home-page" target="_blank" rel="noopener noreferrer">Home</a>
+         <a href="\" class="navbar__links" id="home-page" >Home</a>
       </li>
       <li class="navbar__item">
-        <a href="\results" class="navbar__links" id="results-page" target="_blank" rel="noopener noreferrer">Results</a>
+        <a href="\results" class="navbar__links" id="results-page" >Results</a>
       </li>
       <li class="navbar__item">
-        <a href="\recommendations" class="navbar__links" id="recommendations-page" target="_blank" rel="noopener noreferrer">Recommendations</a>
+        <a href="\recommendations" class="navbar__links" id="recommendations-page" >Recommendations</a>
       </li>
     </ul>
   </div>
@@ -79,28 +79,137 @@
       <div class="main__container">
          <!-- LEVELS PROGRESS BARS-->
        <div class="container">
-        <h2 id="info1">Results: </h2>
+        <h2 id="info1">Results </h2>
         {%if data==1%}
-        <h1>Level 1<h2>
+        <h1>Normal<h2>
           
-            
-          
-         {%elif data==2%}
-         <h1>Level 2</h2>       
-            {%elif data==3%}
-            <h1>Level 3</h2>
-            {%elif data==4%}
-            <h1>Level 4</h2>
-         </h2>
-         {%endif%} 
-    <button type="submit" class="recommend-btn" ><a href="\recommendations" class="navbar__links" id="recommendations-page"
-        >Get Tips</a></button>  
+  <div id="outerbar">
+  <div id="innerbar" style="background-image: linear-gradient(to right,rgba(255,0,0,0),rgb(14, 206, 132));">
+    <br>
+    </div>
+    </div>
+    <div id="text">1%</div>
+<script>
+  function run()
+{
+  var mac= document.getElementById("innerbar");
+  var tex=document.getElementById("text");
+  var width=1;
+  var id=setInterval(ref,20);
+  function ref()
+  {
+    if (width>=25)
+    {
+      clearInterval(id);
+    }
+    else
+    {
+      width++;
+      mac.style.width = width+ '%';
+      tex.innerHTML = width + '%';
+    }
+  }
+}
+</script>
+
+  {%elif data==2%}
+  <h1>Mild Binge Eating</h2>          
+  <div id="rank1">
+  <div id="rank2" style="background-image: linear-gradient(to right,rgba(255,0,0,0),rgb(219, 240, 32));">
+    <br>
+    </div>
+    </div>
+    <div id="text">1%</div>
+<script>
+  function run()
+{
+  var mac= document.getElementById("rank2");
+  var tex=document.getElementById("text");
+  var width=1;
+  var id=setInterval(ref,20);
+  function ref()
+  {
+    if (width>=50)
+    {
+      clearInterval(id);
+    }
+    else
+    {
+      width++;
+      mac.style.width = width+ '%';
+      tex.innerHTML = width + '%';
+    }
+  }
+}
+</script>       
+{%elif data==3%}
+<h1>Binge Eating</h2>              
+<div id="bar1">
+  <div id="bar2" style="background-image: linear-gradient(to right,rgba(236, 252, 8, 0.959),#FFA500);">
+    <br>
+    </div>
+    </div>
+    <div id="text">1%</div>
+<script>
+  function run()
+{
+  var mac= document.getElementById("bar2");
+  var tex=document.getElementById("text");
+  var width=1;
+  var id=setInterval(ref,20);
+  function ref()
+  {
+    if (width>=75)
+    {
+      clearInterval(id);
+    }
+    else
+    {
+      width++;
+      mac.style.width = width+ '%';
+      tex.innerHTML = width + '%';
+    }
+  }
+}
+</script>
+{%elif data==4%}
+<h1>Extreme Binge</h2>
+<div id="outer1">
+<div id="inner2" style="background-image: linear-gradient(to right,rgba(255,0,0,0),rgb(216, 13, 13));">
+<br>
+</div>
+    </div>
+    <div id="text">1%</div>
+<script>
+  function run()
+{
+  var mac= document.getElementById("inner2");
+  var tex=document.getElementById("text");
+  var width=1;
+  var id=setInterval(ref,20);
+  function ref()
+  {
+    if (width>=100)
+    {
+      clearInterval(id);
+    }
+    else
+    {
+      width++;
+      mac.style.width = width+ '%';
+      tex.innerHTML = width + '%';
+    }
+  }
+}
+</script>
+{%endif%} 
+<button type="submit" class="recommend-btn" ><a href="\recommendations" class="navbar__links" id="recommendations-page"
+  ><h3 style="color: black; font-size: 20px;">Get Tips</h3></a></button>    
     
   </div>    
     </div>
   </div>
 
-   
     <script type = "text/javascript" 
     src = "{{ url_for('static', filename = 'js/app.js') }}" ></script>
     <script type = "text/javascript" 

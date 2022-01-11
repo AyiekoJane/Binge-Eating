@@ -95,14 +95,13 @@
     <div class="bmi-box" id="my__bmi">
    
   <h2>BMI Calculator</h2>
-  <p class="text">Height</p>
+  <p class="text">Height in Cm</p>
   <input type="text" id="h">
-  <p class="text">Weight</p>
+  <p class="text">Weight in Kg</p>
   <input type="text" id="w">
   <p id="result"></p>
   
   <button id="bmi-btn" onclick="BMI()">Calculate</button>
-  <p id="info">Please enter your height (cm) and weight (kg)</p> 
   <button class="forward__btn" onclick="forward()">Next</button>
   </div>  
 
@@ -219,17 +218,11 @@
            
         </div>
      </div>  
-
-
-
-
-
-      </div>
+   </div>
     </div>
-  </div>  
+   </div>  
 
     
-   
     <script type = "text/javascript" 
     src = "{{ url_for('static', filename = 'js/app.js') }}" ></script>
     <script type = "text/javascript" 
